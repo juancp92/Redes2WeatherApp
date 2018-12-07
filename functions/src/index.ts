@@ -23,7 +23,7 @@ exports.darkSkyProxy = functions.https.onRequest((req, res) => {
         const url = formatUrl(lat, lng)
 
         /// Send request to DarkSky
-        return http.get(`https://api.darksky.net/forecast/f38f994939b651fbf607c155d9869591/32.94,60.65`).then( response => {
+        return http.get(url).then( response => {
             return res.status(200).send(response.getBody());
         })
         .catch(err => {
