@@ -23,8 +23,8 @@ export class LocalForecastComponent implements OnInit {
         this.lng = position.coords.longitude;
       });
     } else {
-      this.lat = 32.94;
-      this.lng = 60.65;
+      this.lat = -32.94;
+      this.lng = -60.65;
     }
   }
 

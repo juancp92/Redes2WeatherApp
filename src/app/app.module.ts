@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LocalForecastComponent } from './local-forecast/local-forecast.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './weather.service';
+import { MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WeatherService } from './weather.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

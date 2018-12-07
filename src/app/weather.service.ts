@@ -15,7 +15,7 @@ export class WeatherService {
     let params = new HttpParams();
     params = params.set('lat', lat.toString());
     params = params.set('lng', lng.toString());
-
+    console.log(this.ROOT_URL, params);
     return this.http.get(this.ROOT_URL, { params });
   }
 

@@ -1,12 +1,13 @@
-<h1>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+<h1 class="mat-display-1">
   <i class="wi wi-barometer"></i> Your Local Weather Forecast
 </h1>
 
-<p>Current Position: {{ lat }} / {{ lng }} </p>
+<p class="mat-body">Current Position: {{ lat }} / {{ lng }} </p>
 
-<button (click)="getForecast()">Get Forecast</button>
+<button mat-button (click)="getForecast()">Get Forecast</button>
 
-<h1>Seven Day Forecast</h1>
+<h1 class="mat-display-1">Seven Day Forecast</h1>
 
 <div *ngIf="forecast | async as f" class="columns">
     <div *ngFor="let day of f.daily.data" class="column">
