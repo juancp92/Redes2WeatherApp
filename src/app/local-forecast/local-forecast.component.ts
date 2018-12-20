@@ -9,25 +9,29 @@ import { Observable } from 'rxjs';
   styleUrls: ['./local-forecast.component.css']
 })
 export class LocalForecastComponent implements OnInit {
-
+  //Define coordenates variables
   lat: number;
   lng: number;
   forecast: Observable<any>;
 
+  //Subcription to the service
   constructor(private weather: WeatherService) { }
 
   ngOnInit() {
     if (navigator.geolocation) {
+      //Get the location from the browser
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
       });
     } else {
+      //If can´t get location, use Rosario´s as default
       this.lat = -32.94;
       this.lng = -60.65;
     }
   }
-
+  
+  //Function to invoke method from service to get forecast
   getForecast() {
     this.forecast = this.weather.currentForecast(this.lat, this.lng);
       this.forecast.subscribe(data => console.log(data));
